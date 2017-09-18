@@ -14,4 +14,4 @@ def test_wps_caps():
                             '/ows:Identifier')
     assert sorted(names.split()) == [
         'say_hello',
-        'wordcounter']
+        'simple_plot']

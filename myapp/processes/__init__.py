@@ -1,6 +1,6 @@
 from .sayhello import SayHello
-from .wps_wordcounter import WordCounter
+from .plotter import SimplePlot
 processes = [
     SayHello(),
-    WordCounter(),
+    SimplePlot(),
 ]
