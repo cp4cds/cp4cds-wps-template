@@ -1,15 +1,13 @@
 name: myapp
 channels:
-- defaults
 - birdhouse
+- defaults
 - conda-forge
 dependencies:
 - python=2.7
-- pyopenssl=0.16
-- cryptography=1.4
-- pyyaml=3.11
-- curl=7.45.0
-- icu=56
+- pyyaml=3.12
+- cryptography=1.8
+- pyopenssl=17.0
 # buildout
 - mako
 # tests
@@ -24,8 +22,9 @@ dependencies:
 - gunicorn=19.7
 - gevent=1.2
 - lxml=3.7
-- libxslt=1.1.29
-- eventlet
 - genshi=0.7
 # postgres
 - psycopg2
+# plotter
+- cartopy
+- netcdf4
