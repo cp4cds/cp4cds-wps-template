@@ -29,9 +29,11 @@ class SimplePlot(Process):
     def __init__(self):
         inputs = [
             ComplexInput('dataset', 'Dataset', supported_formats=[Format('application/x-netcdf')],
-                         abstract='Example: https://www.esrl.noaa.gov/psd/thredds/fileServer/Datasets/ncep.reanalysis/surface/air.sig995.2012.nc'),  # noqa
+                         default='https://www.esrl.noaa.gov/psd/thredds/fileServer/Datasets/ncep.reanalysis/surface/air.sig995.2012.nc',  # noqa
+                         abstract='Default: https://www.esrl.noaa.gov/psd/thredds/fileServer/Datasets/ncep.reanalysis/surface/air.sig995.2012.nc'),  # noqa
             LiteralInput('variable', 'Variable', data_type='string',
-                         abstract='Example: air'),
+                         default='air',
+                         abstract='Please enter the variable name to be plotted. Default: air'),
         ]
         outputs = [
             ComplexOutput('output', 'Simple Plot', supported_formats=[Format('image/png')],

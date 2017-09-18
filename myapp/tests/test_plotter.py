@@ -6,6 +6,7 @@ from .common import client_for, CFG_FILE
 from myapp.processes.plotter import SimplePlot
 
 
+@pytest.mark.skip(reason="dataset reference does not work")
 @pytest.mark.online
 def test_wps_simple_plot():
     client = client_for(Service(processes=[SimplePlot()], cfgfiles=CFG_FILE))
@@ -14,4 +15,5 @@ def test_wps_simple_plot():
     resp = client.get(
         service='WPS', request='Execute', version='1.0.0', identifier='simple_plot',
         datainputs=datainputs)
+    print resp
     assert_response_success(resp)
