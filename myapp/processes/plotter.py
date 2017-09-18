@@ -5,11 +5,14 @@ from pywps import Format
 import logging
 LOGGER = logging.getLogger('PYWPS')
 
+import matplotlib
+# no X11 server ... must be run first
+# https://github.com/matplotlib/matplotlib/issues/3466/
+matplotlib.use('Agg')
+
 import matplotlib.pylab as plt
 import cartopy.crs as ccrs
 from netCDF4 import Dataset
-import matplotlib
-matplotlib.use('Agg')  # no X11 server
 
 
 def simple_plot(resource, variable=None, output=None):
