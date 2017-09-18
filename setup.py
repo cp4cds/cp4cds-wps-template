@@ -7,7 +7,7 @@ here = os.path.abspath(os.path.dirname(__file__))
 README = open(os.path.join(here, 'README.rst')).read()
 CHANGES = open(os.path.join(here, 'CHANGES.rst')).read()
 
-reqs = [line.strip() for line in open('requirements/deploy.txt')]
+reqs = [line.strip() for line in open('requirements.txt')]
 
 classifiers = [
     'Development Status :: 3 - Alpha',
@@ -20,14 +20,14 @@ classifiers = [
 
 setup(name='myapp',
       version=version,
-      description='A WPS template/example for CP4CDS',
+      description='A WPS template for CP4CDS',
       long_description=README + '\n\n' + CHANGES,
       classifiers=classifiers,
       # author='CP4CDS',
       # author_email='wps@dkrz.de',
       url='https://github.com/cp4cds/cp4cds-wps-template',
       license="Apache License v2.0",
-      keywords='wps pywps birdhouse cp4cds copernicus',
+      keywords='wps pywps birdhouse cp4cds copernicus template',
       packages=find_packages(),
       include_package_data=True,
       zip_safe=False,
