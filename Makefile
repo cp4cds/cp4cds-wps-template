@@ -123,11 +123,6 @@ bootstrap.sh:
 	@curl "https://raw.githubusercontent.com/bird-house/birdhousebuilder.bootstrap/$(RELEASE)/bootstrap.sh" --silent --insecure --output bootstrap.sh "https://raw.githubusercontent.com/bird-house/birdhousebuilder.bootstrap/$(RELEASE)/bootstrap.sh"
 	@chmod 755 bootstrap.sh
 
-requirements.sh:
-	@echo "Setup default requirements.sh ..."
-	@curl "https://raw.githubusercontent.com/bird-house/birdhousebuilder.bootstrap/$(RELEASE)/requirements.sh" --silent --insecure --output requirements.sh
-	@chmod 755 requirements.sh
-
 custom.cfg:
 	@echo "Using custom.cfg for buildout ..."
 	@test -f custom.cfg || cp -v custom.cfg.example custom.cfg
@@ -275,7 +270,7 @@ doc8:
 	$(CONDA_ENV_PATH)/bin/doc8 docs/
 
 .PHONY: selfupdate
-selfupdate: bootstrap.sh requirements.sh .gitignore
+selfupdate: bootstrap.sh .gitignore
 	@curl "https://raw.githubusercontent.com/bird-house/birdhousebuilder.bootstrap/$(RELEASE)/Makefile" --silent --insecure --output Makefile
 
 ## Supervisor targets
