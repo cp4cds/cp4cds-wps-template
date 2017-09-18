@@ -2,12 +2,12 @@
 FROM birdhouse/bird-base:latest
 MAINTAINER https://github.com/cp4cds/myapp
 
-LABEL Description="myapp application" Vendor="Birdhouse" Version="1.0"
+LABEL Description="MyApp: a WPS template for CP4CDS" Vendor="CP4CDS" Version="1.0"
 
 # Configure hostname and ports for services
-ENV HTTP_PORT 8080
-ENV HTTPS_PORT 8443
-ENV OUTPUT_PORT 8000
+ENV HTTP_PORT 5000
+ENV HTTPS_PORT 5001
+ENV OUTPUT_PORT 8090
 ENV HOSTNAME localhost
 
 # Set current home
@@ -23,7 +23,7 @@ WORKDIR /opt/birdhouse/src/myapp
 RUN printf "[buildout]\nextends=profiles/docker.cfg" > custom.cfg
 
 # Install system dependencies
-RUN bash bootstrap.sh -i && bash requirements.sh
+RUN bash bootstrap.sh -i
 
 # Set conda enviroment
 ENV ANACONDA_HOME /opt/conda
