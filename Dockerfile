@@ -1,8 +1,8 @@
 # vim:set ft=dockerfile:
 FROM birdhouse/bird-base:latest
-MAINTAINER https://github.com/bird-house/emu
+MAINTAINER https://github.com/cp4cds/myapp
 
-LABEL Description="emu application" Vendor="Birdhouse" Version="0.6"
+LABEL Description="myapp application" Vendor="Birdhouse" Version="1.0"
 
 # Configure hostname and ports for services
 ENV HTTP_PORT 8080
@@ -14,10 +14,10 @@ ENV HOSTNAME localhost
 ENV HOME /root
 
 # Copy application sources
-COPY . /opt/birdhouse/src/emu
+COPY . /opt/birdhouse/src/myapp
 
 # cd into application
-WORKDIR /opt/birdhouse/src/emu
+WORKDIR /opt/birdhouse/src/myapp
 
 # Provide custom.cfg with settings for docker image
 RUN printf "[buildout]\nextends=profiles/docker.cfg" > custom.cfg
