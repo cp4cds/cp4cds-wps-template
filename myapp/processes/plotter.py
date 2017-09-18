@@ -9,7 +9,7 @@ import matplotlib.pylab as plt
 import cartopy.crs as ccrs
 from netCDF4 import Dataset
 import matplotlib
-matplotlib.use('agg')  # no X11 server
+matplotlib.use('Agg')  # no X11 server
 
 
 def simple_plot(resource, variable=None, output=None):
