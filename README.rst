@@ -94,6 +94,16 @@ Use the following instructions::
   # ... and service capabilities url
   $ firefox http://localhost:5000/wps?service=WPS&request=GetCapabilities
 
+Using Docker
+************
+
+... to be continued.
+
+Example run with Birdy
+**********************
+
+... to be continued.
+
 
 .. _Copernicus: http://climate.copernicus.eu/
 .. _PyWPS: http://pywps.org/
