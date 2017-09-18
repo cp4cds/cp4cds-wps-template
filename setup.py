@@ -23,8 +23,8 @@ setup(name='myapp',
       description='A WPS template/example for CP4CDS',
       long_description=README + '\n\n' + CHANGES,
       classifiers=classifiers,
-      #author='CP4CDS',
-      #author_email='wps@dkrz.de',
+      # author='CP4CDS',
+      # author_email='wps@dkrz.de',
       url='https://github.com/cp4cds/cp4cds-wps-template',
       license="Apache License v2.0",
       keywords='wps pywps birdhouse cp4cds copernicus',
@@ -35,7 +35,7 @@ setup(name='myapp',
       install_requires=reqs,
       entry_points={
           'console_scripts': [
-             'myapp=myapp:main'
+              'myapp=myapp:main'
           ]
       },
       )
