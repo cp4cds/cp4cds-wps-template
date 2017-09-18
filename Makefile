@@ -194,7 +194,7 @@ sysinstall:
 	@echo "\nInstalling system packages for bootstrap ..."
 	@bash bootstrap.sh -i
 	@echo "\nInstalling system packages for your application ..."
-	@test -f requirements.sh || bash requirements.sh
+	@-test -f requirements.sh && bash requirements.sh
 
 .PHONY: install
 install: bootstrap
