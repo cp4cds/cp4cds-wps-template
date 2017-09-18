@@ -66,8 +66,36 @@ and restart the ``supervisor`` service::
   $ make restart
   $ make status
 
+Running WPS service in test environment
+***************************************
 
-  .. _Copernicus: http://climate.copernicus.eu/
-  .. _PyWPS: http://pywps.org/
-  .. _Buildout: http://www.buildout.org/
-  .. _Anaconda: http://www.continuum.io/
+For development purposes you can run the WPS service without nginx and supervisor.
+Use the following instructions::
+
+  # get the source code
+  $ git clone https://github.com/cp4cds/cp4cds-wps-template.git myapp
+  $ cd myapp
+
+  # create conda environment
+  $ conda env create -f environment.yml
+
+  # activate conda environment
+  $ source activate myapp
+
+  # install myapp code into conda environment
+  $ python setup.py develop
+
+  # start the WPS service
+  $ myapp
+
+  # open your browser on the default service url
+  $ firefox http://localhost:5000/wps
+
+  # ... and service capabilities url
+  $ firefox http://localhost:5000/wps?service=WPS&request=GetCapabilities
+
+
+.. _Copernicus: http://climate.copernicus.eu/
+.. _PyWPS: http://pywps.org/
+.. _Buildout: http://www.buildout.org/
+.. _Anaconda: http://www.continuum.io/
