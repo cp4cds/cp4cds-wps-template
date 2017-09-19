@@ -155,7 +155,7 @@ Generate a simple plot for a netCDF file from a public thredds server::
   $ birdy simple_plot -h
   $ birdy simple_plot \
     --variable air \
-    --dataset https://www.esrl.noaa.gov/psd/thredds/fileServer/Datasets/ncep.reanalysis/surface/air.sig995.2012.nc
+    --dataset https://www.esrl.noaa.gov/psd/thredds/fileServer/Datasets/ncep.reanalysis.derived/surface/air.mon.ltm.nc
  [ProcessAccepted 0/100] PyWPS Process simple_plot accepted
  [ProcessSucceeded 0/100] PyWPS Process Simple Plot finished
  Output:

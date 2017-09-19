@@ -14,6 +14,8 @@ import matplotlib.pylab as plt
 import cartopy.crs as ccrs
 from netCDF4 import Dataset
 
+AIR_DS = 'https://www.esrl.noaa.gov/psd/thredds/fileServer/Datasets/ncep.reanalysis.derived/surface/air.mon.ltm.nc'
+
 
 def simple_plot(resource, variable=None, output=None):
     output = output or 'plot.png'
@@ -34,11 +36,11 @@ class SimplePlot(Process):
     def __init__(self):
         inputs = [
             ComplexInput('dataset', 'Dataset', supported_formats=[Format('application/x-netcdf')],
-                         default='https://www.esrl.noaa.gov/psd/thredds/fileServer/Datasets/ncep.reanalysis/surface/air.sig995.2012.nc',  # noqa
-                         abstract='Default: https://www.esrl.noaa.gov/psd/thredds/fileServer/Datasets/ncep.reanalysis/surface/air.sig995.2012.nc'),  # noqa
+                         default=AIR_DS,
+                         abstract='Example: {0}'.format(AIR_DS)),
             LiteralInput('variable', 'Variable', data_type='string',
                          default='air',
-                         abstract='Please enter the variable name to be plotted. Default: air'),
+                         abstract='Please enter the variable name to be plotted, example: air'),
         ]
         outputs = [
             ComplexOutput('output', 'Simple Plot', supported_formats=[Format('image/png')],
