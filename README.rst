@@ -97,7 +97,35 @@ Use the following instructions::
 Using Docker
 ************
 
-... to be continued.
+Get docker images using docker-compose::
+
+    $ docker-compose pull
+
+
+Start the demo with docker-compose::
+
+    $ docker-compose up -d  # runs with -d in the background
+    $ docker-compose logs -f  # check the logs if running in background
+
+By default the WPS service should be available on port 5000::
+
+    $ firefox "http://localhost:5000/wps?service=wps&request=GetCapabilities"
+
+Alternatively you can change the port by using environment variables, for example::
+
+    $ HTTP_PORT=8097 docker-compose up -d # wps service will be available on port 8097
+
+Run docker exec to watch logs::
+
+    $ docker ps     # find container name
+    myapp_myapp_1
+    $ docker exec myapp_myapp_1 tail -f /opt/birdhouse/var/log/supervisor/myapp.log
+    $ docker exec myapp_myapp_1 tail -f /opt/birdhouse/var/log/pywps/myapp.log
+
+Use docker-compose to stop the containers::
+
+    $ docker-compose down
+
 
 Example run with Birdy
 **********************
