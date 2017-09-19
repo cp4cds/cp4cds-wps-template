@@ -19,9 +19,6 @@ COPY . /opt/birdhouse/src/myapp
 # cd into application
 WORKDIR /opt/birdhouse/src/myapp
 
-# Provide cutom Makefile
-RUN cp Makefile.config.example Makefile.config
-
 # Provide custom.cfg with settings for docker image
 RUN printf "[buildout]\nextends=profiles/docker.cfg" > custom.cfg
 
