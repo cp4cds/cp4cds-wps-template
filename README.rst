@@ -150,7 +150,7 @@ Now, run the birdy on the ``say_hello`` process::
   Output:
   output=Hello Birdy
 
-Generate a simple plot with a netCDF file from a public thredds server::
+Generate a simple plot for a netCDF file from a public thredds server::
 
   $ birdy simple_plot -h
   $ birdy simple_plot \
