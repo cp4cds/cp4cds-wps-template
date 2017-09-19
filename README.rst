@@ -130,7 +130,38 @@ Use docker-compose to stop the containers::
 Example run with Birdy
 **********************
 
-... to be continued.
+To have some more convenience you can use the birdy WPS commandline client.
+
+Install it via the conda package manager::
+
+  $ conda install -c birdhouse -c conda-forge birdhouse-birdy
+
+Configure the WPS service::
+
+  $ export WPS_SERVICE=http://localhost:5000/wps
+
+Now, run the birdy on the ``say_hello`` process::
+
+  $ birdy -h
+  $ birdy say_hello -h
+  $ birdy say_hello --name Birdy
+  [ProcessAccepted 0/100] PyWPS Process say_hello accepted
+  [ProcessSucceeded 0/100] PyWPS Process Process Say Hello finished
+  Output:
+  output=Hello Birdy
+
+Generate a simple plot with a netCDF file from a public thredds server::
+
+  $ birdy simple_plot -h
+  $ birdy simple_plot \
+    --variable air \
+    --dataset https://www.esrl.noaa.gov/psd/thredds/fileServer/Datasets/ncep.reanalysis/surface/air.sig995.2012.nc
+ [ProcessAccepted 0/100] PyWPS Process simple_plot accepted
+ [ProcessSucceeded 0/100] PyWPS Process Simple Plot finished
+ Output:
+ output=http://localhost:8090/wpsoutputs/myapp/17031194-9d2d-11e7-9809-68f72837e1b4/plot.png (image/png)
+
+.. image:: docs/images/simple_plot.png
 
 
 .. _Copernicus: http://climate.copernicus.eu/
