@@ -4,6 +4,9 @@ MyApp: a WPS template for CP4CDS
 .. image:: https://travis-ci.org/cp4cds/cp4cds-wps-template.svg?branch=master
    :target: https://travis-ci.org/cp4cds/cp4cds-wps-template
    :alt: Travis Build
+   
+.. warning::
+   This template is outdated. Please use the `Cookiecutter template <https://github.com/bird-house/cookiecutter-birdhouse>`_
 
 MyApp is a minimal WPS to be used as a template to setup Web Processing Services (WPS)
 in the CP4CDS Copernicus project.
